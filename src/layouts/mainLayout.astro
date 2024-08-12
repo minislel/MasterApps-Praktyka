@@ -1,7 +1,7 @@
 
 ---
 const pageTitle = "snap";
-import NavItems from "../components/navItems.astro";
+import Navbar from "../components/Navbar.astro";
 import snap from "../images/logo.svg";
 import {Image} from 'astro:assets';
 import "../styles/global.css"
@@ -24,14 +24,7 @@ import "../styles/global.css"
 </head>
 <body>
 
-<nav class="bg-slate-700 mb-10">
-	<span>
-		<img src={snap.src}>
-	</span>
-	<NavItems class:list={'btn'}/>
-  	<span>Login</span>
-  	<span>Register</span>
-</nav>
+<Navbar/>
 <slot/>
 </body>
 </html>
