@@ -7,88 +7,93 @@ import snap from "../images/logo.svg";
 
 const navItems = {
   "Features": {
-    "Todo List": todo,
-    "Calendar": calendar,
-    "Reminders": reminders,
-    "Planning": planning
+    "Todo List": ["./Todo.html", {todo}],
+    "Calendar": ["./Calendar.html", {calendar}],
+    "Reminders": ["./Reminders.html", {reminders}],
+    "Planning": ["./Planning.html", {planning}]
   },
-  "Company": ["History", "Our Team", "Blog"],
-  "Careers": false,
-  "About": false
+  "Company": {
+	"History" : ["./History.html"],
+	"Our Team": ["./Team.html"],
+	"Blog" : ["./Blog.html"]
+},
+  "Careers": "./Careers.html",
+  "About": "./About.html"
 };
 ---
 
-<nav class="bg-white border-gray-200">
-	<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"></div>
-	<a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-		<img src={snap.src} alt="Snap logo" class="h-8">
-	</a>
-	<button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-	<div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-		<ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-			{
-				Object.entries(navItems).map(([key, value]) => (
-				  <li>
-					
-					{!value && (
-					<a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
-						{key}
-					</a>
-					)}
-
-					
-					{value && Array.isArray(value) && (
-					<button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">{key}
-					<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-  						</svg>
-					</button>
-					<div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-
-					
 
 
 
+<nav class="flex justify-between items-center w-full px-4 py-4 ">
+    <!-- Left Side: Logo -->
+    <div class="flex items-center">
+        <a href="#" class="flex items-center">
+            <img src={snap.src} class="h-7 md:h-8" alt="Snap logo" />
+        </a>
+    </div>
 
+    <!-- Middle Section: Links (Hidden on mobile, shown on desktop) -->
+    <div class="hidden md:flex items-center space-x-6">
+        <a class="hover:text-[#141414] text-[#696969]" href="./Features.html">Features</a>
+        <a class="hover:text-[#141414] text-[#696969]" href="./Company.html">Company</a>
+        <a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a>
+        <a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a>
+    </div>
 
-					<ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-						{value.map(item => (
-						  <li>
-							 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{item}</a>
-						  </li>
-						))}
-					  </ul>
-					</div>
-					)}
-					{value && typeof value === 'object' && !Array.isArray(value) && (
-					  <ul style="list-style-type:none;">
-						{Object.entries(value).map(([subKey, subValue]) => (
-						  <li>
-							<img src={subValue.src} alt={subKey} />
-							{subKey}
-						  </li>
-						))}
-					  </ul>
-					)}
-				  </li>
-				))
-			  }
+    <!-- Right Side: Buttons (Hidden on mobile, shown on desktop) -->
+    <div class="hidden md:flex items-center space-x-4">
+        <button class="hover:text-[#141414] text-[#696969]">Login</button>
+        <button class="px-5 py-2 rounded-xl border-2 hover:border-[#141414] border-[#696969]">Register</button>
+    </div>
 
+    <!-- Mobile Menu Toggle Button -->
+    <div class="md:hidden flex items-center">
+        <button id="mobile-menu-toggle" class="focus:outline-none">
+            <!-- Hamburger Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
 
-
-
-		
-		</ul>
-
-	</div>
-
-  	<span>Login</span>
-  	<span>Register</span>
-	</div>
+    <!-- Mobile Sidebar Menu (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-[64vw] z-50 transform translate-x-full transition-transform duration-300">
+        <div class="flex justify-between items-center p-4">
+            <button id="mobile-menu-close" class="focus:outline-none ml-auto">
+                <!-- Close Icon (X) aligned to the right -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-col items-start pl-8 space-y-4 mt-4">
+            <li><a class="hover:text-[#141414] text-[#696969]" href="./Features.html">Features</a></li>
+            <li><a class="hover:text-[#141414] text-[#696969]" href="./Company.html">Company</a></li>
+            <li><a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a></li>
+            <li><a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a></li>
+            <li><button class="hover:text-[#141414] text-[#696969] mt-4">Login</button></li>
+            <li><button class="px-5 py-2 mt-4 rounded-xl border-2 hover:border-[#141414] border-[#696969]">Register</button></li>
+        </ul>
+    </div>
 </nav>
+
+<script>
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('mobile-menu-close');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+        mobileMenu.classList.toggle('translate-x-0');
+    });
+
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+        mobileMenu.classList.toggle('translate-x-0');
+    });
+</script>
+
+
+
 

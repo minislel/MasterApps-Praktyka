@@ -2,4 +2,26 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 18px;
+    color: hsl(0, 0%, 8%);
+    background-color: hsl(0, 0%, 98%);
+}
+
+.epilogue-font-500 {
+  font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.epilogue-font-700 {
+    font-family: "Epilogue", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.navlink{
+    color: hsl(0, 0%, 41%);
+}
+.navlink:hover{
+    color:hsl(0, 0%, 8%);
 }
