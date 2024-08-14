@@ -4,7 +4,8 @@ import calendar from "../images/icon-calendar.svg";
 import reminders from "../images/icon-reminders.svg";
 import planning from "../images/icon-planning.svg";
 import snap from "../images/logo.svg";
-
+import NavbarLoginRegister from "./NavbarLoginRegister.astro";
+import NavbarLoginRegisterMobile from "./NavbarLoginRegisterMobile.astro";
 const navItems = {
   "Features": {
     "Todo List": ["./Todo.html", {todo}],
@@ -25,26 +26,26 @@ const navItems = {
 
 
 
-<nav class="flex justify-between items-center w-full px-4 py-4 ">
-    <!-- Left Side: Logo -->
-    <div class="flex items-center">
+<nav class="flex justify-between items-center w-full px-9 py-4">
+    <!-- Left Side: Logo and Links -->
+    <div class="flex items-center space-x-6">
+        <!-- Logo -->
         <a href="#" class="flex items-center">
             <img src={snap.src} class="h-7 md:h-8" alt="Snap logo" />
         </a>
+
+        <!-- Middle Section: Links -->
+        <div class="hidden md:flex items-center space-x-6">
+            <a class="hover:text-[#141414] text-[#696969]" href="./Features.html">Features</a>
+            <a class="hover:text-[#141414] text-[#696969]" href="./Company.html">Company</a>
+            <a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a>
+            <a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a>
+        </div>
     </div>
 
-    <!-- Middle Section: Links (Hidden on mobile, shown on desktop) -->
-    <div class="hidden md:flex items-center space-x-6">
-        <a class="hover:text-[#141414] text-[#696969]" href="./Features.html">Features</a>
-        <a class="hover:text-[#141414] text-[#696969]" href="./Company.html">Company</a>
-        <a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a>
-        <a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a>
-    </div>
-
-    <!-- Right Side: Buttons (Hidden on mobile, shown on desktop) -->
-    <div class="hidden md:flex items-center space-x-4">
-        <button class="hover:text-[#141414] text-[#696969]">Login</button>
-        <button class="px-5 py-2 rounded-xl border-2 hover:border-[#141414] border-[#696969]">Register</button>
+    <!-- Right Side: Buttons -->
+    <div class="hidden md:flex justify-end items-center space-x-4">
+        <NavbarLoginRegister></NavbarLoginRegister> <!-- easy to replace if the user is logged in -->
     </div>
 
     <!-- Mobile Menu Toggle Button -->
@@ -56,27 +57,26 @@ const navItems = {
             </svg>
         </button>
     </div>
-
-    <!-- Mobile Sidebar Menu (Hidden by default) -->
-    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-[64vw] z-50 transform translate-x-full transition-transform duration-300">
-        <div class="flex justify-between items-center p-4">
-            <button id="mobile-menu-close" class="focus:outline-none ml-auto">
-                <!-- Close Icon (X) aligned to the right -->
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        <ul class="flex flex-col items-start pl-8 space-y-4 mt-4">
-            <li><a class="hover:text-[#141414] text-[#696969]" href="./Features.html">Features</a></li>
-            <li><a class="hover:text-[#141414] text-[#696969]" href="./Company.html">Company</a></li>
-            <li><a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a></li>
-            <li><a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a></li>
-            <li><button class="hover:text-[#141414] text-[#696969] mt-4">Login</button></li>
-            <li><button class="px-5 py-2 mt-4 rounded-xl border-2 hover:border-[#141414] border-[#696969]">Register</button></li>
-        </ul>
-    </div>
 </nav>
+
+<!-- Mobile Sidebar Menu -->
+<div id="mobile-menu" class="fixed inset-y-0 right-0 w-[64vw] z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex justify-between items-center p-4">
+        <button id="mobile-menu-close" class="focus:outline-none ml-auto">
+            <!-- Close Icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <ul class="flex flex-col items-start pl-9 box-border space-y-4 mt-4">
+        <li><a class="hover:text-[#141414] text-[#696969]" href="./Features.html">Features</a></li>
+        <li><a class="hover:text-[#141414] text-[#696969]" href="./Company.html">Company</a></li>
+        <li><a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a></li>
+        <li><a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a></li>
+        <NavbarLoginRegisterMobile/>
+    </ul>
+</div>
 
 <script>
     const menuToggle = document.getElementById('mobile-menu-toggle');
@@ -93,6 +93,7 @@ const navItems = {
         mobileMenu.classList.toggle('translate-x-0');
     });
 </script>
+
 
 
 
