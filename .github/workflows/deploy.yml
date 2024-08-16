@@ -30,7 +30,7 @@ jobs:
 
       - name: Build your site
         run: npm run build
-      
+
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
         with:
@@ -43,12 +43,8 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-      
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
         with:
-          path: ./dist
+          artifact_name: github-pages
