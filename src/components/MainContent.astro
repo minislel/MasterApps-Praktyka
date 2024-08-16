@@ -13,22 +13,22 @@ import maker from "../images/client-maker.svg"
     <div class="  col-start-1 md:col-end-5 md:row-start-1 md:row-end-4 md:pl-11 text-center md:text-left px-3 md:pt-28 box-border pt-7" id="text">
     <h1 class="epilogue-font-700 text-3xl md:text-7xl mb-11 ">Make<br class="hidden md:inline"> remote work</h1>
 
-    <div class=" text-[#696969] pb-7 ">
+    <div class=" text-mediumgray pb-7 ">
         Get your team in sync, no matter your location. Streamline processes, 
         create team rituals, and watch productivity soar.
     </div>
   
-	<button class="px-5 py-2 rounded-xl text-[#fafafa] hover:text-[#141414] border-2 border-[#141414] bg-[#141414] hover:bg-[#fafafa]">
+	<button class="px-5 py-2 rounded-xl text-almostwhite hover:text-almostblack border-2 border-almostblack bg-almostblack hover:bg-almostwhite">
         Learn more
     </button>
     </div>
-    <div id="logos" class=" flex flex-row gap-8 col-start-1 md:col-end-5 row-start-3 md:row-start-4 md:row-end-5 md:pl-11 text-center md:text-left px-3 md:pt-28 box-border pt-7">
-        <img src={databiz.src} alt="databiz logo" class="md:h-5">
-        <img src={audiophile.src} alt="audiophile logo" class="md:h-7">
-        <img src={meet.src} alt="meet logo" class="md:h-5">
-        <img src={maker.src} alt="maker logo" class="md:h-5">
+    <div id="logos" class=" md:flex md:flex-row grid grid-cols  gap-8 col-start-1 md:col-end-5 row-start-3 md:row-start-4 md:row-end-5 md:pl-11 text-center md:text-left px-3 md:pt-28 box-border pt-4 overflow-hidden">
+        <img src={databiz.src} alt="databiz logo" class="md:h-5 col-start-1">
+        <img src={audiophile.src} alt="audiophile logo" class="md:h-7 col-start-2">
+        <img src={meet.src} alt="meet logo" class="md:h-5 col-start-3">
+        <img src={maker.src} alt="maker logo" class="md:h-5 col-start-4">
     </div>
-    <div id="image" class="  col-start-1 md:col-start-5 md:col-end-8 row-start-1 md:row-end-5 items-center justify-center flex">
+    <div id="image" class="col-start-1 md:col-start-5 md:col-end-8 row-start-1 md:row-end-5 items-center justify-center flex">
         <img src={imagedesktop.src} class="h-[90vh] hidden md:inline-block aspect-auto" alt="">
         <img src={imagemobile.src} class="w-full block md:hidden aspect-auto" alt="">
     </div>

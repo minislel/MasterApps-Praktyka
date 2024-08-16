@@ -6,26 +6,8 @@ import planning from "../images/icon-planning.svg";
 import snap from "../images/logo.svg";
 import NavbarLoginRegister from "./NavbarLoginRegister.astro";
 import NavbarLoginRegisterMobile from "./NavbarLoginRegisterMobile.astro";
-const navItems = {
-  "Features": {
-    "Todo List": ["./Todo.html", {todo}],
-    "Calendar": ["./Calendar.html", {calendar}],
-    "Reminders": ["./Reminders.html", {reminders}],
-    "Planning": ["./Planning.html", {planning}]
-  },
-  "Company": {
-	"History" : ["./History.html"],
-	"Our Team": ["./Team.html"],
-	"Blog" : ["./Blog.html"]
-},
-  "Careers": "./Careers.html",
-  "About": "./About.html"
-};
+
 ---
-
-
-
-
 <nav class="flex justify-between items-center w-full px-9 py-4">
     <!-- Left Side: Logo and Links -->
     <div class="flex items-center space-x-6">
@@ -37,46 +19,46 @@ const navItems = {
         <!-- Middle Section: Links with Dropdowns -->
         <div class="hidden md:flex items-center space-x-6">
             <div class="relative">
-                <button id="features-btn" class="hover:text-[#141414] text-[#696969] flex items-center focus:outline-none">
+                <button id="features-btn" class="hover:text-almostblack text-mediumgray flex items-center focus:outline-none">
                     Features
                     <svg id="features-arrow" class="w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div id="features-menu" class=" w-36 absolute hidden  shadow-md mt-2 rounded-lg py-2 transform -translate-x-1/4">
-                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">
+                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">
                         <img class="w-4 h-4 mr-2" src={todo.src} alt="">
                         Todo List
                     </a>
-                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">
+                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">
                         <img class="w-4 h-4 mr-2" src={calendar.src} alt="">
                         Calendar
                     </a>
-                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">
+                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">
                         <img class="w-4 h-4 mr-2" src={reminders.src} alt="">
                         Reminders
                     </a>
-                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">
+                    <a class="flex items-center px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">
                         <img class="w-4 h-4 mr-2" src={planning.src} alt="">
                         Planning
                     </a>
                 </div>
             </div>
             <div class="relative">
-                <button id="company-btn" class="hover:text-[#141414] text-[#696969] flex items-center focus:outline-none">
+                <button id="company-btn" class="hover:text-almostblack text-mediumgray flex items-center focus:outline-none">
                     Company
                     <svg id="company-arrow" class="w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <div id="company-menu" class="w-28 absolute hidden shadow-md mt-2 rounded-lg py-2">
-                    <a class="block px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">History</a>
-                    <a class="block px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">Our Team</a>
-                    <a class="block px-4 py-2 hover:bg-gray-100 text-[#696969]" href="#">Blog</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">History</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">Our Team</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100 text-mediumgray" href="#">Blog</a>
                 </div>
             </div>
-            <a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a>
-            <a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a>
+            <a class="hover:text-almostblack text-mediumgray" href="./Careers.html">Careers</a>
+            <a class="hover:text-almostblack text-mediumgray" href="./About.html">About</a>
         </div>
     </div>
 
@@ -108,50 +90,53 @@ const navItems = {
     </div>
     <ul class="flex flex-col items-start px-4 box-border space-y-4 mt-4">
         <li class="relative">
-            <button id="features-btn-mobile" class="hover:text-[#141414] text-[#696969] flex items-center focus:outline-none">
+            <button id="features-btn-mobile" class="hover:text-almostblack text-mediumgray flex items-center focus:outline-none">
                 Features
                 <svg id="features-arrow-mobile" class="w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </button>
             <ul id="features-menu-mobile" class="pl-4 mt-1 hidden">
-                <li><a class="flex items-center hover:text-[#141414] text-[#696969]" href="#">
+                <li><a class="flex items-center hover:text-almostblack text-mediumgray my-3" href="#">
                     <img class="w-4 h-4 mr-2" src={todo.src} alt="">
                     Todo List
                 </a></li>
-                <li><a class="flex items-center hover:text-[#141414] text-[#696969]" href="#">
+                <li><a class="flex items-center hover:text-almostblack text-mediumgray my-3" href="#">
                     <img class="w-4 h-4 mr-2" src={calendar.src} alt="">
                     Calendar
                 </a></li>
-                <li><a class="flex items-center hover:text-[#141414] text-[#696969]" href="#">
+                <li><a class="flex items-center hover:text-almostblack text-mediumgray my-3" href="#">
                     <img class="w-4 h-4 mr-2" src={reminders.src} alt="">
                     Reminders
                 </a></li>
-                <li><a class="flex items-center hover:text-[#141414] text-[#696969]" href="#">
+                <li><a class="flex items-center hover:text-almostblack text-mediumgray my-3" href="#">
                     <img class="w-4 h-4 mr-2" src={planning.src} alt="">
                     Planning
                 </a></li>
             </ul>
         </li>
         <li class="relative">
-            <button id="company-btn-mobile" class="hover:text-[#141414] text-[#696969] flex items-center focus:outline-none">
+            <button id="company-btn-mobile" class="hover:text-almostblack text-mediumgray flex items-center focus:outline-none">
                 Company
                 <svg id="company-arrow-mobile" class="w-4 h-4 ml-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </button>
             <ul id="company-menu-mobile" class="pl-4 mt-1 hidden">
-                <li><a class="block hover:text-[#141414] text-[#696969]" href="#">History</a></li>
-                <li><a class="block hover:text-[#141414] text-[#696969]" href="#">Our Team</a></li>
-                <li><a class="block hover:text-[#141414] text-[#696969]" href="#">Blog</a></li>
+                <li><a class="block hover:text-almostblack text-mediumgray my-3" href="#">History</a></li>
+                <li><a class="block hover:text-almostblack text-mediumgray my-3" href="#">Our Team</a></li>
+                <li><a class="block hover:text-almostblack text-mediumgray my-3    " href="#">Blog</a></li>
             </ul>
         </li>
-        <li><a class="hover:text-[#141414] text-[#696969]" href="./Careers.html">Careers</a></li>
-        <li><a class="hover:text-[#141414] text-[#696969]" href="./About.html">About</a></li>
-        <NavbarLoginRegisterMobile/>
+        <li><a class="hover:text-almostblack text-mediumgray" href="./Careers.html">Careers</a></li>
+        <li><a class="hover:text-almostblack text-mediumgray" href="./About.html">About</a></li>
+        <div class="flex flex-col w-full box-border">
+            <NavbarLoginRegisterMobile/>
+        </div>
+        
     </ul>
 </div>
-
+<div id="overlay" class="fixed inset-0 bg-black opacity-50 z-40 hidden"></div>
 <script>
     // Function to toggle dropdown visibility and rotate arrow
     function toggleDropdown(buttonId, menuId, arrowId) {
@@ -173,21 +158,23 @@ const navItems = {
     toggleDropdown('features-btn-mobile', 'features-menu-mobile', 'features-arrow-mobile');
     toggleDropdown('company-btn-mobile', 'company-menu-mobile', 'company-arrow-mobile');
 
-    // Mobile menu toggle
+    // Mobile menu and overlay toggle
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuClose = document.getElementById('mobile-menu-close');
+    const overlay = document.getElementById('overlay');
 
-    menuToggle.addEventListener('click', () => {
+    function toggleMenu() {
         mobileMenu.classList.toggle('translate-x-full');
         mobileMenu.classList.toggle('translate-x-0');
-    });
+        overlay.classList.toggle('hidden');
+    }
 
-    menuClose.addEventListener('click', () => {
-        mobileMenu.classList.toggle('translate-x-full');
-        mobileMenu.classList.toggle('translate-x-0');
-    });
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu); // Close menu when clicking overlay
 </script>
+
 
 
 
