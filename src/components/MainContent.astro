@@ -1,27 +1,36 @@
 ---
 import imagedesktop from "../images/image-hero-desktop.png"
 import imagemobile from "../images/image-hero-mobile.png"
+import databiz from "../images/client-databiz.svg"
+import audiophile from "../images/client-audiophile.svg"
+import meet from "../images/client-meet.svg"
+import maker from "../images/client-maker.svg"
 ---
 
 
-<div class="grid lg:grid-cols-7 grid-rows-5 grid-cols-1 gap-0 w-full row pt-5 " id="container">
+<div class="grid md:grid-cols-7 grid-rows-3 md:grid-rows-5 grid-cols-1 gap-0 w-full row md:pt-5 " id="container">
 
-    <div class="  col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-4 pl-11 pt-28 box-border" id="text">
-    <h1 class="epilogue-font-700 text-7xl mb-11">Make<br> remote work</h1>
+    <div class="  col-start-1 md:col-end-5 md:row-start-1 md:row-end-4 md:pl-11 text-center md:text-left px-3 md:pt-28 box-border pt-7" id="text">
+    <h1 class="epilogue-font-700 text-3xl md:text-7xl mb-11 ">Make<br class="hidden md:inline"> remote work</h1>
 
-    <div>
+    <div class=" text-[#696969] pb-7 ">
         Get your team in sync, no matter your location. Streamline processes, 
         create team rituals, and watch productivity soar.
     </div>
   
-	<button>
-        Learn moredd
+	<button class="px-5 py-2 rounded-xl text-[#fafafa] hover:text-[#141414] border-2 border-[#141414] bg-[#141414] hover:bg-[#fafafa]">
+        Learn more
     </button>
     </div>
-    <div id="logos" class="  col-start-1 lg:col-end-5 row-start-4 row-end-5"></div>
-    <div id="image" class="  col-start-1 lg:col-start-5 lg:col-end-8 row-start-1 lg:row-end-5 items-center justify-center flex">
-        <img src={imagedesktop.src} class="h-[90vh] hidden lg:inline-block" alt="">
-        <img src={imagemobile.src} class="h-[30vh] block lg:hidden" alt="">
+    <div id="logos" class=" flex flex-row gap-8 col-start-1 md:col-end-5 row-start-3 md:row-start-4 md:row-end-5 md:pl-11 text-center md:text-left px-3 md:pt-28 box-border pt-7">
+        <img src={databiz.src} alt="databiz logo" class="md:h-5">
+        <img src={audiophile.src} alt="audiophile logo" class="md:h-7">
+        <img src={meet.src} alt="meet logo" class="md:h-5">
+        <img src={maker.src} alt="maker logo" class="md:h-5">
+    </div>
+    <div id="image" class="  col-start-1 md:col-start-5 md:col-end-8 row-start-1 md:row-end-5 items-center justify-center flex">
+        <img src={imagedesktop.src} class="h-[90vh] hidden md:inline-block aspect-auto" alt="">
+        <img src={imagemobile.src} class="w-full block md:hidden aspect-auto" alt="">
     </div>
     
 </div>
