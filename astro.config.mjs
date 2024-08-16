@@ -6,5 +6,6 @@ const LIVE_URL = 'https://minislel.github.io'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minislel.github.io',
+  base: 'MasterApps-Praktyka',
   integrations: [tailwind()]
 });
